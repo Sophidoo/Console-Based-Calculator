@@ -135,23 +135,13 @@ public class CalculatorView {
                     System.out.println("|                           DIVISION                             |");
                     System.out.println("|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|");
                     System.out.println();
-                    System.out.println(">> Please enter the number of operands expected");
+                    System.out.println(">> Please enter the dividend");
                     System.out.print(">> ");
-                    int divisionEntries = input.nextInt();
-                    double[] divisionArr = new double[divisionEntries];
-                    for(int i = 0; i < divisionEntries; i++){
-                        if(i == 0){
-                            System.out.println(">> Please enter the first operand");
-                            System.out.print(">> ");
-                            divisionArr[i] = input.nextDouble();
-                            continue;
-                        }
-
-                        System.out.println(">> Please enter the next operand");
-                        System.out.print(">> ");
-                        divisionArr[i] = input.nextDouble();
-                    }
-                    calcModel.setArray(divisionArr);
+                    calcModel.setOperand1(input.nextDouble());
+                    System.out.println(">> Please enter the divisor");
+                    System.out.print(">> ");
+                    calcModel.setOperand2(input.nextDouble());
+                    System.out.println();
                     System.out.println(calcController.Division(calcModel));
                     break;
 

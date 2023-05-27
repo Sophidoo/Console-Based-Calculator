@@ -36,12 +36,11 @@ public class  CalculatorController implements CalculatorInterface{
 
     @Override
     public String Division(CalculatorModel calculatorModel) {
-         double[] values = calculatorModel.getArray();
-        double result = values[0];
-        for (int i = 1; i < values.length; i++) {
-            result /= values[i];
+        if(calculatorModel.getOperand2() == 0) {
+            return "Math Error";
         }
-        return "\n>> The solution to the division of the numbers is = " + result;
+        double result = calculatorModel.getOperand1()/ calculatorModel.getOperand2();
+        return "\n>> " + calculatorModel.getOperand1() + "/" + calculatorModel.getOperand2() + " is = " + result;
     }
 
 //    Algorithm to find the power of a number
